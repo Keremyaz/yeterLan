@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.yeterlan.FiltersController">
+   <children>
+      <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kayıtlı Filtreler">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtre Detayı">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtre Adı">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtre Aktif">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="filterComboBox" layoutX="137.0" layoutY="20.0" prefHeight="25.0" prefWidth="285.0" promptText="Seçim Yapınız" />
+      <CheckBox fx:id="activeFilterCheckBox" layoutX="137.0" layoutY="117.0" mnemonicParsing="false" />
+      <Button fx:id="loadButton" layoutX="431.0" layoutY="20.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Yükle" />
+      <Button fx:id="saveButton" layoutX="431.0" layoutY="77.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Kaydet" />
+      <Button fx:id="deleteButton" layoutX="516.0" layoutY="20.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Sil" />
+      <Separator layoutX="116.0" layoutY="61.0" prefHeight="3.0" prefWidth="725.0" />
+      <Accordion layoutX="567.0" layoutY="282.0" />
+
+      <!-- TabPane -->
+      <TabPane fx:id="filterTabPane" layoutY="151.0" prefHeight="454.0" prefWidth="990.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <!-- Şirketler Tabı -->
+            <Tab text="Şirketler">
+               <AnchorPane>
+                  <ComboBox fx:id="companyComboBox" layoutX="103.0" layoutY="10.0" prefHeight="25.0" prefWidth="319.0" promptText="Seçim Yapınız" />
+                  <ListView fx:id="companyListView" layoutX="14.0" layoutY="45.0" prefHeight="365.0" prefWidth="443.0" />
+               </AnchorPane>
+            </Tab>
+
+            <!-- Fonlar Tabı -->
+            <Tab text="Fonlar">
+               <AnchorPane>
+                  <ComboBox fx:id="fundComboBox" layoutX="103.0" layoutY="10.0" prefHeight="25.0" prefWidth="319.0" promptText="Seçim Yapınız" />
+                  <ListView fx:id="fundListView" layoutX="14.0" layoutY="45.0" prefHeight="365.0" prefWidth="443.0" />
+               </AnchorPane>
+            </Tab>
+
+            <!-- Şirket Bildirim Konuları Tabı -->
+            <Tab text="Şirket Bildirim Konuları">
+               <AnchorPane prefHeight="424.0" prefWidth="951.0">
+                  <ComboBox fx:id="companyNotificationComboBox" layoutX="103.0" layoutY="10.0" prefHeight="25.0" prefWidth="319.0" promptText="Seçim Yapınız" />
+                  <ListView fx:id="companyNotificationListView" layoutX="14.0" layoutY="45.0" prefHeight="365.0" prefWidth="443.0" />
+               </AnchorPane>
+            </Tab>
+
+            <!-- Fon Bildirim Konuları Tabı -->
+            <Tab text="Fon Bildirim Konuları">
+               <AnchorPane>
+                  <ComboBox fx:id="fundNotificationComboBox" layoutX="103.0" layoutY="10.0" prefHeight="25.0" prefWidth="319.0" promptText="Seçim Yapınız" />
+                  <ListView fx:id="fundNotificationListView" layoutX="14.0" layoutY="45.0" prefHeight="365.0" prefWidth="443.0" />
+               </AnchorPane>
+            </Tab>
+         </tabs>
+      </TabPane>
+
+      <TextField fx:id="filterNameTextField" layoutX="137.0" layoutY="77.0" prefHeight="25.0" prefWidth="285.0" />
+   </children>
+</AnchorPane>
